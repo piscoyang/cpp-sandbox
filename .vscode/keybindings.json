@@ -1,0 +1,67 @@
+[
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.start",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "⚡▶️ Release & Run",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "shift+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🐛▶️ Debug & Run",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🐛 Debug Build",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "⚡ Release Build",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+shift+alt+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🚀 Modern C++20 Build",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+f6",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🏃 Run Debug",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+alt+f6",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🏃 Run Release",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+shift+delete",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🧹 Clean Debug",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+alt+delete",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🧹 Clean Release",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    },
+    {
+        "key": "ctrl+shift+alt+delete",
+        "command": "workbench.action.tasks.runTask",
+        "args": "🧹 Clean All",
+        "when": "editorTextFocus && resourceExtname == '.cpp'"
+    }
+]

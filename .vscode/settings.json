@@ -1,0 +1,61 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "*.h": "cpp",
+        "*.hpp": "cpp",
+        "*.cpp": "cpp",
+        "*.cc": "cpp",
+        "*.cxx": "cpp"
+    },
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.intelliSenseMode": "msvc-x64",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.suggestSnippets": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "files.exclude": {
+        "build/": false,
+        "docs/": false,
+        "src/": false,
+        "build/debug/*.obj": true,
+        "build/debug/*.ilk": true,
+        "build/debug/*.pdb": true,
+        "build/release/*.obj": true,
+        "build/release/*.ilk": true,
+        "**/*.obj": true,
+        "**/*.ilk": true,
+        "**/*.pdb": true,
+        "vc140.pdb": true
+    },
+    "files.watcherExclude": {
+        "build/debug/*.obj": true,
+        "build/debug/*.ilk": true,
+        "build/debug/*.pdb": true,
+        "build/release/*.obj": true,
+        "build/release/*.ilk": true,
+        "**/*.obj": true,
+        "**/*.ilk": true,
+        "**/*.pdb": true
+    },
+    "search.exclude": {
+        "build/debug/*.obj": true,
+        "build/debug/*.ilk": true,
+        "build/debug/*.pdb": true,
+        "build/release/*.obj": true,
+        "build/release/*.ilk": true,
+        "**/*.obj": true,
+        "**/*.ilk": true,
+        "**/*.pdb": true
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Microsoft, IndentWidth: 4, TabWidth: 4, UseTab: Never }",
+    "C_Cpp.formatting": "clangFormat",
+    "markdown.preview.theme": "dark",
+    "markdown.preview.fontSize": 14
+}

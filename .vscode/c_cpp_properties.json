@@ -1,0 +1,71 @@
+{
+    "configurations": [
+        {
+            "name": "Windows-MSVC-x64",
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:/Program Files (x86)/msvc/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "includePath": [
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/**",
+                "C:/Program Files (x86)/msvc/VC/Tools/MSVC/14.44.35207/include",
+                "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/ucrt",
+                "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/shared",
+                "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/um",
+                "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/winrt",
+                "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/cppwinrt"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "_WIN32",
+                "_WIN64",
+                "_MSC_VER=1944",
+                "_MSVC_LANG=202002L",
+                "WIN32_LEAN_AND_MEAN",
+                "_CRT_SECURE_NO_WARNINGS"
+            ],
+            "browse": {
+                "path": [
+                    "C:/Program Files (x86)/msvc/VC/Tools/MSVC/14.44.35207/include",
+                    "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/ucrt",
+                    "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/shared",
+                    "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/um",
+                    "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/winrt",
+                    "C:/Program Files (x86)/msvc/Windows Kits/10/Include/10.0.26100.0/cppwinrt",
+                    "${workspaceFolder}"
+                ]
+            },
+            "compilerArgs": [
+                "/std:c++20",
+                "/EHsc"
+            ],
+            "windowsSdkVersion": "10.0.26100.0"
+        },
+        {
+            "name": "Windows-Default",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "_WIN32",
+                "_WIN64"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}

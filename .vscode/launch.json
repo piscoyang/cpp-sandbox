@@ -1,0 +1,112 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🐛 Debug Only",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🐛 Debug Build",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "▶️ Run Only (Release)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/release/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "⚡ Release Build",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "🐛▶️ Debug & Run",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🐛 Debug Build",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "🧹🐛 Clean & Debug",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🧹 Clean & Rebuild Debug",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "🧹⚡ Clean & Release",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/release/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🧹 Clean & Rebuild Release",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "🧹 Clean Debug Only",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "powershell.exe",
+            "args": [
+                "-Command",
+                "Write-Host '🧹 Debug clean completed - no program to run.' -ForegroundColor Green; Read-Host 'Press Enter to continue'"
+            ],
+            "preLaunchTask": "🧹 Clean Debug",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": []
+        },
+        {
+            "name": "🧹 Clean Release Only",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "powershell.exe",
+            "args": [
+                "-Command",
+                "Write-Host '🧹 Release clean completed - no program to run.' -ForegroundColor Green; Read-Host 'Press Enter to continue'"
+            ],
+            "preLaunchTask": "🧹 Clean Release",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": []
+        },
+        {
+            "name": "🧹 Clean All Only",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "powershell.exe",
+            "args": [
+                "-Command",
+                "Write-Host '🧹 All files cleaned - no program to run.' -ForegroundColor Green; Read-Host 'Press Enter to continue'"
+            ],
+            "preLaunchTask": "🧹 Clean All",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": []
+        }
+    ]
+}

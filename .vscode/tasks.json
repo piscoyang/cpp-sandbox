@@ -1,0 +1,218 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🐛 Debug Build",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (!(Test-Path 'build\\debug')) { New-Item -ItemType Directory -Path 'build\\debug' -Force | Out-Null }; Compile-Cpp-Debug '${file}' 'build\\debug\\${fileBasenameNoExtension}'"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "⚡ Release Build",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (!(Test-Path 'build\\release')) { New-Item -ItemType Directory -Path 'build\\release' -Force | Out-Null }; Compile-Cpp-Release '${file}' 'build\\release\\${fileBasenameNoExtension}'"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🚀 Modern C++20 Build",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (!(Test-Path 'build\\release')) { New-Item -ItemType Directory -Path 'build\\release' -Force | Out-Null }; Compile-Cpp-Modern '${file}' 'build\\release\\${fileBasenameNoExtension}'"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🏃 Run Debug",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "& { Set-Location -Path '${workspaceFolder}'; .\\build\\debug\\${fileBasenameNoExtension}.exe }"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🏃 Run Release",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "& { Set-Location -Path '${workspaceFolder}'; .\\build\\release\\${fileBasenameNoExtension}.exe }"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🐛▶️ Debug & Run",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "🐛 Debug Build",
+                "🏃 Run Debug"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "⚡▶️ Release & Run",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "⚡ Release Build",
+                "🏃 Run Release"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "🧹 Clean Debug",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (Test-Path 'build\\debug') { Remove-Item -Path 'build\\debug\\*' -Recurse -Force; Write-Host '🧹 Debug files cleaned!' -ForegroundColor Green } else { Write-Host '📁 Debug folder not found - nothing to clean.' -ForegroundColor Yellow }"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🧹 Clean Release",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (Test-Path 'build\\release') { Remove-Item -Path 'build\\release\\*' -Recurse -Force; Write-Host '🧹 Release files cleaned!' -ForegroundColor Green } else { Write-Host '📁 Release folder not found - nothing to clean.' -ForegroundColor Yellow }"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🧹 Clean All",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "if (Test-Path 'build') { Remove-Item -Path 'build' -Recurse -Force; Write-Host '🧹 All build files cleaned!' -ForegroundColor Green } else { Write-Host '📁 Build folder not found - nothing to clean.' -ForegroundColor Yellow }"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "🧹 Clean & Rebuild Debug",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "🧹 Clean Debug",
+                "🐛 Debug Build"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "🧹 Clean & Rebuild Release",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "🧹 Clean Release",
+                "⚡ Release Build"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            }
+        }
+    ]
+}
