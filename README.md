@@ -74,19 +74,30 @@ To use this setup in new projects:
 
 The `.vscode/launch.json` includes these configurations:
 
-### Debug & Run Options:
+### Debug & Run Options (Integrated Terminal):
 - **🐛 Debug Only** - Debug with breakpoints
 - **▶️ Run Only (Release)** - Fast release build
 - **🐛▶️ Debug & Run** - Debug build and run
 
-### Clean & Build Options:
+### Debug & Run Options (External Console/Popup CMD):
+- **🪟🐛 Debug (External Console)** - Debug in popup command window
+- **🪟▶️ Run (External Console)** - Run in popup command window
+- **🪟🐛▶️ Debug & Run (External Console)** - Debug and run in popup window
+
+### Clean & Build Options (Integrated Terminal):
 - **🧹🐛 Clean & Debug** - Clean + rebuild + debug
 - **🧹⚡ Clean & Release** - Clean + rebuild + release
+
+### Clean & Build Options (External Console/Popup CMD):
+- **🪟🧹🐛 Clean & Debug (External Console)** - Clean + rebuild + debug in popup window
+- **🪟🧹⚡ Clean & Release (External Console)** - Clean + rebuild + release in popup window
 
 ### Clean Only Options:
 - **🧹 Clean Debug Only** - Remove debug files
 - **🧹 Clean Release Only** - Remove release files
 - **🧹 Clean All Only** - Remove all build files
+
+> **💡 Tip:** Use the 🪟 (External Console) options when you want your program to run in a separate popup command window instead of VS Code's integrated terminal. This is useful for programs that need full console interaction or when you want to keep the output separate from VS Code.
 
 ## 🔧 Troubleshooting
 

@@ -107,6 +107,68 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": []
+        },
+        {
+            "name": "🪟🐛 Debug (External Console)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🐛 Debug Build",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "🪟▶️ Run (External Console)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/release/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "⚡ Release Build",
+            "console": "externalTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "🪟🐛▶️ Debug & Run (External Console)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🐛 Debug Build",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "🪟🧹🐛 Clean & Debug (External Console)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🧹 Clean & Rebuild Debug",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "🪟🧹⚡ Clean & Release (External Console)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/release/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "🧹 Clean & Rebuild Release",
+            "console": "externalTerminal",
+            "justMyCode": false
         }
     ]
 }
