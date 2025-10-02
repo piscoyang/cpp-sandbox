@@ -1,4 +1,3 @@
-
 import io
 import os
 import sys
@@ -13,8 +12,9 @@ import subprocess
 import urllib.error
 import urllib.request
 from pathlib import Path
+import ctypes
 
-OUTPUT = Path("msvc")         # output folder
+OUTPUT = Path("C:/Program Files (x86)/msvc")  # output folder
 DOWNLOADS = Path("downloads") # temporary download files
 
 # NOTE: not all host & target architecture combinations are supported
@@ -30,6 +30,13 @@ MANIFEST_PREVIEW_URL  = "https://aka.ms/vs/17/pre/channel"
 MANIFEST_INSIDERS_URL = "https://aka.ms/vs/18/insiders/channel"
 
 ssl_context = None
+
+def is_admin():
+    """Check if the script is running with administrator privileges"""
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
 
 def download(url):
   with urllib.request.urlopen(url, context=ssl_context) as res:
@@ -79,7 +86,7 @@ def get_msi_cabs(msi):
 
 def first(items, cond = lambda x: True):
   return next((item for item in items if cond(item)), None)
-  
+
 
 ### parse command-line arguments
 
@@ -99,6 +106,21 @@ targets = args.target.split(',')
 for target in targets:
   if target not in ALL_TARGETS:
     sys.exit(f"Unknown {target} target architecture!")
+
+# Check for administrator privileges
+if not is_admin():
+    print("ERROR: This script requires administrator privileges to install to Program Files.")
+    print("Please run this script as Administrator.")
+    print("Right-click on Command Prompt/PowerShell and select 'Run as administrator'")
+    sys.exit(1)
+
+print("=" * 60)
+print("MSVC Standalone Installer for C++ Sandbox")
+print("=" * 60)
+print(f"Installing to: {OUTPUT}")
+print(f"Host architecture: {host}")
+print(f"Target architectures: {', '.join(targets)}")
+print("=" * 60)
 
 
 ### get main manifest
@@ -378,5 +400,15 @@ set LIB=%~dp0VC\Tools\MSVC\{msvcv}\lib\{target};%~dp0Windows Kits\10\Lib\{sdkv}\
 """
   (OUTPUT / f"setup_{target}.bat").write_text(SETUP)
 
-print(f"Total downloaded: {total_download>>20} MB")
-print("Done!")
+print("=" * 60)
+print(f"✅ INSTALLATION COMPLETE!")
+print("=" * 60)
+print(f"📁 MSVC installed to: {OUTPUT}")
+print(f"📊 Total downloaded: {total_download>>20} MB")
+print(f"🎯 Host: {host}, Targets: {', '.join(targets)}")
+print("=" * 60)
+print("🚀 Next steps:")
+print("1. Copy the .vscode/ folder to your C++ projects")
+print("2. Open VS Code and start coding!")
+print("3. Your IntelliSense should now work correctly")
+print("=" * 60)
