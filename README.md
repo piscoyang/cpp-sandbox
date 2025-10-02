@@ -42,9 +42,12 @@ A C++ sandbox for quick practice, algorithm testing, and code experiments with o
 ### For New Projects
 
 To use this setup in new projects:
-1. Copy the `.vscode/` folder to your new project
-2. Create a `src/` folder for your C++ files
-3. Start coding!
+1. **Run the PowerShell setup** (if not done globally): `.\setup-powershell.ps1`
+2. **Copy the `.vscode/` folder** to your new project
+3. **Create a `src/` folder** for your C++ files
+4. **Start coding!**
+
+> **💡 Note:** If you added the PowerShell functions to your profile permanently, you only need to run `setup-powershell.ps1` once on your system.
 
 ## 📖 Documentation
 
@@ -76,6 +79,7 @@ To use this setup in new projects:
 ├── src/              # Source files
 │   └── *.cpp         # Your C++ files
 ├── setup-msvc.py     # MSVC installer script
+├── setup-powershell.ps1  # PowerShell functions installer
 └── README.md         # This file
 ```
 
@@ -117,11 +121,19 @@ If you see "cannot open source file" errors:
 3. Press `Ctrl+Shift+P` → `C/C++: Select IntelliSense Configuration...` → Choose `Windows-MSVC-x64`
 
 ### Build Issues
+If you get "Compile-Cpp-Debug is not recognized" errors:
+1. **Run the PowerShell setup:** `.\setup-powershell.ps1`
+2. **Restart VSCode** after installing the functions
+3. **Check PowerShell execution policy:** Run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` if needed
+
+### Other Build Issues
 - Ensure MSVC is installed to `C:\Program Files (x86)\msvc\`
 - Check that your `.cpp` files are in the `src/` folder
 - Try the clean & rebuild options
 
 ### For New Projects
-Simply copy the entire `.vscode/` folder to your new C++ project - it's pre-configured to work with the MSVC installation!
+1. **Copy the `.vscode/` folder** to your new C++ project
+2. **Run `.\setup-powershell.ps1`** in the new project (if functions not in profile)
+3. **Everything should work** with the MSVC installation!
 
 Happy coding! 🎉
