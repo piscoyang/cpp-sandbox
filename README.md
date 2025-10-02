@@ -21,11 +21,20 @@ A C++ sandbox for quick practice, algorithm testing, and code experiments with o
    - Install it to `C:\Program Files (x86)\msvc\`
    - Set up all necessary include paths and libraries
 
-2. **Copy VSCode Configuration:**
+2. **Install PowerShell Functions:**
+   ```powershell
+   .\setup-powershell.ps1
+   ```
+   This will:
+   - Load the required C++ compilation functions
+   - Optionally add them to your PowerShell profile permanently
+   - Enable the VSCode build tasks to work correctly
+
+3. **Copy VSCode Configuration:**
    - Copy the entire `.vscode/` folder to your new C++ projects
    - The configuration is pre-configured to work with the installed MSVC
 
-3. **Verify Installation:**
+4. **Verify Installation:**
    - Open VSCode in this directory
    - Open `src/demo.cpp`
    - Press `F5` - it should compile and run without errors
